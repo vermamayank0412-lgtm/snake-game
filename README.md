@@ -1,5 +1,7 @@
 # Snake++ 🐍
 
+🎮 **[Play the game live](https://vermamayank0412-lgtm.github.io/snake-game/)**
+
 A browser-based Snake game built with vanilla JavaScript and the HTML5 Canvas API — no frameworks, no libraries.
 
 ## Features
