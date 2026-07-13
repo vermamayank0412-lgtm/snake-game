@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snake — Advanced</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>Snake++</h1>
+        <div>
+          <span id="score">Score: <strong id="scoreVal">0</strong></span>
+          <span id="best">Best: <strong id="bestVal">0</strong></span>
+        </div>
+      </header>
+      <canvas id="board" width="600" height="600"></canvas>
+      <div class="controls">
+        <button id="startBtn" class="primary">Start / Pause</button>
+        <button id="restartBtn">Restart</button>
+        <button id="themeBtn">Change Theme</button>
+      </div>
+      <div class="dpad">
+        <div></div>
+        <button data-dir="up"></button>
+        <div></div>
+        <button data-dir="left"></button>
+        <div></div>
+        <button data-dir="right"></button>
+        <div></div>
+        <button data-dir="down"></button>
+        <div></div>
+      </div>
+      <p class="hint">
+        Controls: Arrow keys or WASD. On touch, swipe or use the arrow buttons.
+      </p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
