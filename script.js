@@ -35,6 +35,7 @@ themeBtn.addEventListener("click", () => {
 });
   let snake, dir, nextDir, food, obstacles;
   let timer, running, score, tickMs, gameOver, bestScore;
+  let newBestFlashUntil = 0;
   const cell = () => Math.floor(canvas.width / GRID);
   function init() {
     const mid = Math.floor(GRID / 2);
@@ -106,6 +107,7 @@ themeBtn.addEventListener("click", () => {
         bestScore = score;
         localStorage.setItem("snakeBest", bestScore);
         bestVal.textContent = bestScore;
+        newBestFlashUntil = Date.now() + 1000;
       }
       spawnFood();
       tickMs = Math.max(60, tickMs - SPEEDUP_DELTA);
@@ -215,6 +217,12 @@ themeBtn.addEventListener("click", () => {
       ctx.beginPath();
       ctx.arc(px + c * 0.7, py + c * offset, eyeSize, 0, Math.PI * 2);
       ctx.fill();
+    }
+    if (Date.now() < newBestFlashUntil) {
+      ctx.fillStyle = "#ffd700";
+      ctx.font = `bold ${Math.floor(c * 0.5)}px system-ui, Arial`;
+      ctx.textAlign = "center";
+      ctx.fillText("New Best!", canvas.width / 2, c * 0.8);
     }
     if (showGameOver && gameOver) {
       ctx.fillStyle = "rgba(0,0,0,0.45)";
